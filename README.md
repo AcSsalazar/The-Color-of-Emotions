@@ -5,7 +5,7 @@
 ---
 
 ##  Resumen (*Abstract*)
-Este proyecto explora la intersección entre el análisis de audio y las representaciones visuales mediante el análisis de sonido emocional proveniente de fuentes multimodales. Abarca conceptos fundamentales de procesamiento de señales, reconocimiento de patrones y extracción de color, integrando además una perspectiva artística de estas transformaciones visuales. 
+Este repositorio aborda el procesamiento integral de señales digitales de audio. El contenido abarca desde los conceptos básicos sobre la manipulación de archivos de audio en Python y el tratamiento de estas señales, hasta su transformación en conjuntos de datos aptos para el entrenamiento de redes neuronales y modelos de aprendizaje automático (*machine learning*). Asimismo, se incluye la visualización de todas estas etapas estructuradas en capítulos. Estos, organizados en sus respectivos *notebooks*, facilitan una exploración intuitiva de cada fase del proyecto, integrando, además, una perspectiva artística de dichas transformaciones visuales.
 
 El objetivo principal es crear una colección de datos limpia y técnicamente precisa, disponible en dos formatos:
 - **Imágenes 2D:** Espectrogramas de Mel y MFCC en formato PNG (resolución 224x224).
