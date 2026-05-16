@@ -1,102 +1,102 @@
 # The Color of Emotions: Speech Emotion Recognition (SER)
 
-> **Análisis e implementación de redes neuronales entrenadas a partir de datos multimodales (*early fusion*), numéricos (tensores 3D) e imágenes 2D.**
+> **Analysis and implementation of neural networks trained on multimodal data (*early fusion*), numerical data (3D tensors), and 2D images.**
 
 ---
 
-##  Resumen (*Abstract*)
-En este proyecto se abordan las diferencias en el entrenamiento de redes neuronales alimentadas por datos provenientes de señales de audio. Estas señales son transformadas en dos formatos distintos: datos numéricos multidimensionales mediante PyTorch e imágenes bidimensionales generadas a partir de sus espectrogramas de Mel.
+##  Abstract
+This project addresses the differences in training neural networks fed with data derived from audio signals. These signals are transformed into two distinct formats: multidimensional numerical data using PyTorch and two-dimensional images generated from their Mel spectrograms.
 
-A través de los capítulos de este proyecto se exploran conceptos fundamentales del procesamiento de señales, el reconocimiento de patrones y la extracción de características, integrando, además, una perspectiva artística del sonido concebido como imagen.
+Throughout the chapters of this project, fundamental concepts of signal processing, pattern recognition, and feature extraction are explored, while also integrating an artistic perspective of sound conceived as image.
 
-El objetivo principal en este repositorio es crear una colección de datos limpia y técnicamente precisa, disponible en dos formatos:
+The main objective of this repository is to create a clean and technically accurate data collection, available in two formats:
 
-- [**Imágenes 2D:**](https://drive.google.com/file/d/16sWxbncvc9iazebQPa6vCrHe6KZkgUQS/view?usp=sharing) Espectrogramas de Mel y MFCC en formato PNG (resolución 224x224).
-- [**Tensores 3D:**](https://drive.google.com/drive/folders/1GIuh9wlE3dxeL5lUlKGAkK66VWKCJU9L?usp=sharing) Basados en coeficientes MFCC y sus deltas de primer y segundo orden.
-
----
-
-## Capitulos y Temas Abordados
-
-1. **Análisis preliminar:** Exploración de descriptores acústicos con Librosa, reproducción de muestras de audio.
-2. **Extracción de características:** Obtención, visualización y explicación de descriptores acústicos clave (MFCC, Espectrogramas de Mel).
-3. **Creación de *datasets* multimodales:** Generación de representaciones visuales y matriciales orientadas al entrenamiento de modelos.
-4. **Entrenamiento:** Entrenamiento de redes neuronales mediante los dos tipos de datos disponibles *computer vision* vs *audio processing*.
-5. **Entrenamiento multimodal:** Evaluación de la eficiencia y precisión de los modelos entrenados con refuerzo (ResNet18 vs Effientnet-B0).
-6. **Análisis de resultados:** Evaluacion del modelo con mejores resultados y visualización de patrones emocionales.
-7. **Mirada artística:** Mapeo de intensidades frecuenciales hacia espacios de color para generar paletas visuales representativas de cada emoción.
+- [**2D Images:**](https://drive.google.com/file/d/16sWxbncvc9iazebQPa6vCrHe6KZkgUQS/view?usp=sharing) Mel spectrograms and MFCC in PNG format (224x224 resolution).
+- [**3D Tensors:**](https://drive.google.com/drive/folders/1GIuh9wlE3dxeL5lUlKGAkK66VWKCJU9L?usp=sharing) Based on MFCC coefficients and their first and second order deltas.
 
 ---
 
-##  Herramientas y Tecnologías
+## Chapters and Topics Covered
 
-### Procesamiento de Audio
-- **Librosa:** Análisis de audio y generación de espectrogramas de Mel.
-- **NumPy:** Computación numérica y manipulación de tensores.
+1. **Preliminary analysis:** Exploration of acoustic descriptors with Librosa, audio sample playback.
+2. **Feature extraction:** Obtaining, visualizing, and explaining key acoustic descriptors (MFCC, Mel spectrograms).
+3. **Multimodal dataset creation:** Generation of visual and matrix representations for model training.
+4. **Training:** Training neural networks using two types of available data: *computer vision* vs *audio processing*.
+5. **Multimodal training:** Evaluation of efficiency and accuracy of reinforced trained models (ResNet18 vs EfficientNet-B0).
+6. **Results analysis:** Evaluation of the best-performing model and visualization of emotional patterns.
+7. **Artistic perspective:** Mapping frequency intensities to color spaces to generate representative visual palettes for each emotion.
 
-### Procesamiento de Imagen y Visualización
-- **Matplotlib / Seaborn / Plotly:** Visualización de espectrogramas y análisis estadístico.
-- **Pillow (PIL) / Scikit-image:** Manipulación y procesamiento avanzado de imágenes.
-- **ColorThief:** Extracción de paletas de color.
+---
+
+##  Tools and Technologies
+
+### Audio Processing
+- **Librosa:** Audio analysis and Mel spectrogram generation.
+- **NumPy:** Numerical computation and tensor manipulation.
+
+### Image Processing and Visualization
+- **Matplotlib / Seaborn / Plotly:** Spectrogram visualization and statistical analysis.
+- **Pillow (PIL) / Scikit-image:** Advanced image manipulation and processing.
+- **ColorThief:** Color palette extraction.
 
 ### Machine Learning & Deep Learning
-- **Scikit-learn:** Reconocimiento de patrones y algoritmos de *clustering*.
-- **TensorFlow / PyTorch:** Construcción y entrenamiento de modelos de *Deep Learning* para clasificación.
+- **Scikit-learn:** Pattern recognition and *clustering* algorithms.
+- **TensorFlow / PyTorch:** Building and training *Deep Learning* models for classification.
 
 ---
 
-## Metodología y Fases del Proyecto
+## Methodology and Project Phases
 
-### Fase 1: Procesamiento de Audio y Extracción
-- Carga de muestras de sonido emocional.
-- Extracción de coeficientes MFCC y generación de espectrogramas de Mel.
-- Data augmentation (ruido, cambio de velocidad) y combinacion de *datasets* para aumentar la diversidad del dataset final.
-- Normalización y preprocesamiento de datos.
+### Phase 1: Audio Processing and Extraction
+- Loading emotional sound samples.
+- Extraction of MFCC coefficients and generation of Mel spectrograms.
+- Data augmentation (noise, speed variation) and *dataset* combination to increase diversity in the final dataset.
+- Data normalization and preprocessing.
 
-### Fase 2: Division de Datos y Análisis Exploratorio Final
-- Análisis estadístico para identificar patrones frecuenciales.
-- Agrupación (*clustering*) de clases entre los datos.
-- Extracción de características clave por emoción.
+### Phase 2: Data Split and Final Exploratory Analysis
+- Statistical analysis to identify frequency patterns.
+- Class *clustering* among the data.
+- Extraction of key features by emotion.
 
-### Fase 3: Extracción de Color y Visión Artística
-- Mapeo de intensidades de frecuencia a espacios de color (RGB, HSV, LAB).
-- Generación de paletas de color específicas (5-10 colores por emoción) y gradientes temporales.
-- Diseño de fondos estéticos y exportación de metadatos (PNG, HEX, JSON).
-
----
-
-##  Preguntas de Investigación
-
-El desarrollo de este proyecto busca responder a las siguientes interrogantes:
-1. ¿Existen patrones frecuenciales consistentes para emociones específicas en diferentes sonidos?
-2. ¿Que tan eficiente resulta el entrenamiento de modelos de *Deep Learning* utilizando datos numéricos (tensores 3D) frente a imágenes (espectrogramas)?
-3. ¿Hay marjen de mejora en la claisficacion tras implementar un método de refuerzo mediante datos multimodales con *early fusion*?
-4. ¿Es posible generar paletas de color que representen visualmente las emociones a partir de sus características frecuenciales?
-5. ¿Pueden estas paletas de color ser utilizadas en aplicaciones prácticas como diseño UI/UX, visualización musical o arte generativo?
+### Phase 3: Color Extraction and Artistic Vision
+- Mapping frequency intensities to color spaces (RGB, HSV, LAB).
+- Generation of specific color palettes (5-10 colors per emotion) and temporal gradients.
+- Design of aesthetic backgrounds and export of metadata (PNG, HEX, JSON).
 
 ---
 
-##  Aplicaciones Prácticas
+##  Research Questions
 
-- **Diseño UI/UX:** Esquemas de color para interfaces basados en la conciencia emocional.
-- **Detección en tiempo real:** Identificación de emociones en tiempo real para detectar cambios de humor.
-- **Arte Generativo:** Esquema de ambientacion espacial basado en las paletas de color obtenidas.
-
----
-
-##  Estructura del Repositorio
-
-*(Estructura de directorios pendiente de actualización a medida que avance el proyecto).*
+The development of this project seeks to answer the following questions:
+1. Are there consistent frequency patterns for specific emotions in different sounds?
+2. How efficient is training *Deep Learning* models using numerical data (3D tensors) versus images (spectrograms)?
+3. Is there room for improvement in classification after implementing a reinforcement method using multimodal data with *early fusion*?
+4. Is it possible to generate color palettes that visually represent emotions based on their frequency characteristics?
+5. Can these color palettes be used in practical applications such as UI/UX design, music visualization, or generative art?
 
 ---
 
-##  Cómo Contribuir
-Las pautas de contribución (envío de muestras de sonido, estándares de calidad para paletas y código) estarán disponibles próximamente.
+##  Practical Applications
 
-##  Licencia
-[Por definir]
+- **UI/UX Design:** Color schemes for interfaces based on emotional awareness.
+- **Real-time detection:** Identification of emotions in real-time to detect mood changes.
+- **Generative Art:** Spatial ambience schemes based on obtained color palettes.
 
-##  Contacto
-**Mantenimiento del proyecto:** acsalazar-19@hotmail.com 
-**Fecha de creación:** 11 de marzo de 2026  
-**Estado:** Borrador - Segunda fase
+---
+
+##  Repository Structure
+
+*(Directory structure pending update as the project progresses).*
+
+---
+
+##  How to Contribute
+Contribution guidelines (sound sample submissions, quality standards for palettes and code) will be available soon.
+
+##  License
+[To be defined]
+
+##  Contact
+**Project Maintenance:** acsalazar-19@hotmail.com 
+**Creation Date:** March 11, 2026  
+**Status:** Draft - Phase Two
